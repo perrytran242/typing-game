@@ -10,20 +10,27 @@ export class AppComponent {
   compareWord = '';
   counter = 0;
 
+
+
   onInputReceived(event) {
+    const splitWord = this.returnSplitWord();
+    console.log(splitWord);
     const { data } = event;
-    console.log('letter typed:', data);
     this.compareWord += data;
 
     if (data === ' ') {
-      console.log(this.compareWord);
-      // this.counter++;
-      console.log(this.counter);
+      if (this.compareWord.trim() === splitWord[this.counter].word) {
+        console.log('compare word:', this.compareWord);
+        this.counter++;
+        this.compareWord = '';
+      }
     }
   }
 
   returnSplitWord() {
-    return this.typingChallenge.split(' ');
+    return this.typingChallenge.split(' ').map(val => {
+      return {word: val, check: false};
+    });
   }
 }
 

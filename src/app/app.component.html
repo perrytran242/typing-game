@@ -3,9 +3,9 @@
     <h1 class="is-size-2">Typing Challenge</h1>
     <div>
       <span
-        *ngFor="let word of returnSplitWord() let i = index;">
-        <span class="red_text" *ngIf="counter === i; else elseBlock">{{ word + ' ' }}</span>
-        <ng-template #elseBlock>{{ word + ' ' }}</ng-template>
+        *ngFor="let obj of returnSplitWord() let i = index;">
+        <span class="red_text" *ngIf="counter === i; else elseBlock">{{ obj.word + ' ' }}</span>
+        <ng-template #elseBlock>{{ obj.word + ' ' }}</ng-template>
       </span>
     </div>
 
