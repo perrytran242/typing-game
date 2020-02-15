@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .card {
+    width: 400px;
+    margin: 0 auto;
+    height: 300px;
+
+    .field {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}
+
+
