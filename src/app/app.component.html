@@ -1,7 +1,13 @@
 <div class="container has-text-centered">
   <div class="card ">
     <h1 class="is-size-2">Typing Challenge</h1>
-    <p>{{ title }}</p>
+    <div>
+      <span
+        *ngFor="let word of returnSplitWord() let i = index;">
+        <span class="red_text" *ngIf="counter === i; else elseBlock">{{ word + ' ' }}</span>
+        <ng-template #elseBlock>{{ word + ' ' }}</ng-template>
+      </span>
+    </div>
 
     <div class="field">
       <div class="control">

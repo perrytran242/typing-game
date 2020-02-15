@@ -6,13 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Lorem ipsum dolor sit.';
+  typingChallenge = 'Lorem ipsum dolor sit.';
+  compareWord = '';
+  counter = 0;
 
   onInputReceived(event) {
-    const splitTitle = this.title.split(' ');
     const { data } = event;
+    console.log('letter typed:', data);
+    this.compareWord += data;
 
-    console.log(data);
+    if (data === ' ') {
+      console.log(this.compareWord);
+      // this.counter++;
+      console.log(this.counter);
+    }
+  }
+
+  returnSplitWord() {
+    return this.typingChallenge.split(' ');
   }
 }
 
