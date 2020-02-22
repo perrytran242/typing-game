@@ -7,25 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   typingChallenge = 'Lorem ipsum dolor sit';
-  compareWord = '';
-  counter = 0;
-  splitWord = this.returnSplitWord();
   enteredText = '';
   correct = 'green';
   error = 'red';
 
   ngOnInit() {
-    // console.log('letter:', this.returnSplitWord());
   }
 
   onInputReceived(event) {
-    console.log(event);
     const { value } = event.target;
-
-    console.log(value);
-    if (this.splitWord[this.counter].letter === value[this.counter]) {
-      this.splitWord[this.counter].check = true;
-    }
     this.enteredText = value;
   }
 
