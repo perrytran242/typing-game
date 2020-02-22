@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   compareWord = '';
   counter = 0;
   splitWord = this.returnSplitWord();
+  enteredText = '';
   correct = 'green';
   error = 'red';
 
@@ -18,17 +19,14 @@ export class AppComponent implements OnInit {
   }
 
   onInputReceived(event) {
-
+    console.log(event);
     const { value } = event.target;
+
+    console.log(value);
     if (this.splitWord[this.counter].letter === value[this.counter]) {
       this.splitWord[this.counter].check = true;
     }
-
-
-    this.counter++;
-    console.log(this.counter);
-    console.log(this.splitWord);
-
+    this.enteredText = value;
   }
 
   returnSplitWord() {

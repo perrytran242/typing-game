@@ -4,9 +4,14 @@
     <div>
       <span
         *ngFor="let obj of returnSplitWord(); let i = index;">
-        <span *ngIf="obj.check" [style.color]="error" >{{ obj.letter }}</span>
-        <span *ngIf="!obj.check" [style.color]="correct" >{{ obj.letter }}</span>
+        <span>
+          <span [style.color]="error" *ngIf="obj.letter !== enteredText[i]">{{ enteredText[i] }}</span>
+
+          <span [style.color]="correct" *ngIf="obj.letter === enteredText[i]">{{ obj.letter }}</span>
+        </span>
         <!-- <ng-template #elseBlock>{{ obj.letter }}</ng-template> -->
+
+
       </span>
     </div>
 
