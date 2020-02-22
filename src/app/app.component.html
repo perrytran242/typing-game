@@ -5,8 +5,8 @@
       <span
         *ngFor="let obj of returnSplitWord(); let i = index;">
         <span>
-          <span [style.color]="error" *ngIf="obj.letter !== enteredText[i]">{{ enteredText[i] }}</span>
-          <span [style.color]="correct" *ngIf="obj.letter === enteredText[i]">{{ obj.letter }}</span>
+          <!-- <span [style.color]="error" *ngIf="obj.letter !== enteredText[i]">{{ enteredText[i] }}</span> -->
+          <span [ngClass]="checkLettersMatch(obj.letter, enteredText[i])">{{ obj.letter }}</span>
         </span>
       </span>
     </div>

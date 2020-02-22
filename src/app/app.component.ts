@@ -24,5 +24,13 @@ export class AppComponent implements OnInit {
       return {letter: val, check: false};
     });
   }
+
+  checkLettersMatch(letter, enteredText) {
+    if (letter === enteredText) {
+      return 'green_text';
+    } else {
+      return 'red_text';
+    }
+  }
 }
 // user clicks and shows value
